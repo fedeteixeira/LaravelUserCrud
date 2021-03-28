@@ -6,21 +6,52 @@
             <h5 class="w-75 text-muted">{{usuario.description}}</h5>
 
             <div class="mt-4">
-                <a v-on:click="deleteUser()" class="btn btn-danger" href="/home">
-                    Delete
-                </a>
                 <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm">
+                    Delete
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal fade" id="deleteConfirm">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+
+                            <div class="modal-header bg-danger text-light">
+                                <h4 class="modal-title">Delete Confirmation</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                Are you sure you want to delete <span class="text-primary font-weight-bold">{{usuario.name}}</span> ?
+                                <div class="text-danger">
+                                    This action is not reversible
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    No, go back
+                                </button>
+
+                                <a v-on:click="deleteUser()" class="btn btn-danger" href="/home">
+                                    Yes, delete
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#myModal">
                     Edit
                 </button>
 
                 <!-- The Modal -->
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog">
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
 
                             <!-- Modal Header -->
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary text-light">
                                 <h4 class="modal-title">Edit User</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
@@ -36,7 +67,7 @@
                                 <div class="form-group row">
                                     <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
                                     <div class="col-md-6">
-                                        <textarea maxlength="200" type="text" class="form-control" name="description" v-model="usuario.description"></textarea>
+                                        <textarea maxlength="200" rows="5" type="text" class="form-control" name="description" v-model="usuario.description"></textarea>
                                     </div>
                                 </div>
                             </div>

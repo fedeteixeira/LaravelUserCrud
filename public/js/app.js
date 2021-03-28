@@ -1967,6 +1967,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['user_no_json'],
   data: function data() {
@@ -37710,23 +37741,88 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "mt-4" }, [
           _c(
-            "a",
+            "button",
             {
               staticClass: "btn btn-danger",
-              attrs: { href: "/home" },
-              on: {
-                click: function($event) {
-                  return _vm.deleteUser()
-                }
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#deleteConfirm"
               }
             },
             [_vm._v("\n                Delete\n            ")]
           ),
           _vm._v(" "),
           _c(
+            "div",
+            { staticClass: "modal fade", attrs: { id: "deleteConfirm" } },
+            [
+              _c(
+                "div",
+                { staticClass: "modal-dialog modal-dialog-centered modal-sm" },
+                [
+                  _c("div", { staticClass: "modal-content" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-body" }, [
+                      _vm._v(
+                        "\n                            Are you sure you want to delete "
+                      ),
+                      _c(
+                        "span",
+                        { staticClass: "text-primary font-weight-bold" },
+                        [_vm._v(_vm._s(_vm.usuario.name))]
+                      ),
+                      _vm._v(" ?\n                            "),
+                      _c("div", { staticClass: "text-danger" }, [
+                        _vm._v(
+                          "\n                                This action is not reversible\n                            "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-footer" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-secondary",
+                          attrs: { type: "button", "data-dismiss": "modal" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                No, go back\n                            "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-danger",
+                          attrs: { href: "/home" },
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteUser()
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                Yes, delete\n                            "
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
             "button",
             {
-              staticClass: "btn btn-primary",
+              staticClass: "btn btn-primary ml-2",
               attrs: {
                 type: "button",
                 "data-toggle": "modal",
@@ -37736,10 +37832,10 @@ var render = function() {
             [_vm._v("\n                Edit\n            ")]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "modal", attrs: { id: "myModal" } }, [
-            _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
+            _c("div", { staticClass: "modal-dialog modal-dialog-centered" }, [
               _c("div", { staticClass: "modal-content" }, [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-body" }, [
                   _c("div", { staticClass: "form-group row" }, [
@@ -37800,6 +37896,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           maxlength: "200",
+                          rows: "5",
                           type: "text",
                           name: "description"
                         },
@@ -37858,7 +37955,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
+    return _c("div", { staticClass: "modal-header bg-danger text-light" }, [
+      _c("h4", { staticClass: "modal-title" }, [_vm._v("Delete Confirmation")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header bg-primary text-light" }, [
       _c("h4", { staticClass: "modal-title" }, [_vm._v("Edit User")]),
       _vm._v(" "),
       _c(
