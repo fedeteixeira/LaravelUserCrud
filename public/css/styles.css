@@ -21,6 +21,10 @@
     font-weight: bolder;
 }
 
+.profile-name:hover {
+    text-decoration: none;
+}
+
 .rounded-circle {
     border-radius: 50%;
     width: 200px;

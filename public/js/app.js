@@ -1870,11 +1870,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1894,9 +1889,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     deleteUser: function deleteUser(user_id) {
       axios["delete"]('/user/' + user_id).then(this.retrieveUsers());
-    },
-    showProfile: function showProfile(user_id) {
-      axios.get('/user/' + user_id);
     },
     loggear: function loggear(data) {
       console.log(data);
@@ -1933,6 +1925,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['user_no_json'],
   data: function data() {
@@ -1944,6 +1976,13 @@ __webpack_require__.r(__webpack_exports__);
     this.usuario = JSON.parse(this.user_no_json);
   },
   methods: {
+    deleteUser: function deleteUser() {
+      axios["delete"]('/user/' + this.usuario.id);
+    },
+    updateUser: function updateUser() {
+      console.log(this.usuario);
+      axios.put('/user/' + this.usuario.id, this.usuario);
+    },
     loggear: function loggear(objeto) {
       console.log(objeto);
     }
@@ -37583,87 +37622,40 @@ var render = function() {
         "div",
         { staticClass: "card-columns" },
         _vm._l(_vm.usuarios.data, function(usuario) {
-          return _c("div", { key: usuario.id, staticClass: "card" }, [
-            _c("div", { staticClass: "card-body text-center" }, [
-              _c("img", {
-                staticClass: "ratio img-responsive img-circle rounded-circle",
-                attrs: {
-                  src: "/images/profile_photos/" + usuario.image,
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "dropdown" }, [
-                _c("h3", { staticClass: "card-title profile-name mt-3" }, [
+          return _c(
+            "div",
+            { key: usuario.id, staticClass: "card mt-2 mr-2 ml-2 mb-2" },
+            [
+              _c("div", { staticClass: "card-body text-center shadow p-3" }, [
+                _c("img", {
+                  staticClass: "ratio img-responsive img-circle rounded-circle",
+                  attrs: {
+                    src: "/images/profile_photos/" + usuario.image,
+                    alt: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", [
                   _c(
                     "a",
                     {
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          return _vm.showProfile(usuario.id)
-                        }
-                      }
+                      staticClass: "card-title mt-3 profile-name text-success",
+                      attrs: { href: "user/" + usuario.id }
                     },
                     [_vm._v(_vm._s(usuario.name))]
-                  ),
-                  _vm._v(" "),
-                  _c("img", {
-                    attrs: {
-                      src: "/images/three-dots-vertical.svg",
-                      id: "dropdownProfileButton",
-                      "data-toggle": "dropdown",
-                      "aria-haspopup": "true",
-                      "aria-expanded": "false"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "dropdown-menu",
-                      attrs: { "aria-labelledby": "dropdownMenuButton" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "dropdown-item",
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              return _vm.deleteUser(usuario.id)
-                            }
-                          }
-                        },
-                        [_vm._v("Delete")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item", attrs: { href: "#" } },
-                        [_vm._v("Another action")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item", attrs: { href: "#" } },
-                        [_vm._v("Something else here")]
-                      )
-                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "description" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(usuario.description) +
+                      "                        \n                    "
                   )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "description" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(usuario.description) +
-                    "                        \n                    "
-                )
               ])
-            ])
-          ])
+            ]
+          )
         }),
         0
       )
@@ -37698,7 +37690,7 @@ var render = function() {
       "div",
       {
         staticClass:
-          "mt-5 d-flex flex-column justify-content-center align-items-center"
+          "mt-5 d-flex flex-column justify-content-center align-items-center text-center"
       },
       [
         _c("img", {
@@ -37710,11 +37702,150 @@ var render = function() {
           _vm._v(_vm._s(_vm.usuario.name))
         ]),
         _vm._v(" "),
-        _c("h5", { staticClass: "w-75 text-center text-muted" }, [
+        _c("h5", { staticClass: "w-75 text-muted" }, [
           _vm._v(_vm._s(_vm.usuario.description))
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "mt-4" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              on: {
+                click: function($event) {
+                  return _vm.deleteUser()
+                }
+              }
+            },
+            [_vm._v("Delete")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#myModal"
+              }
+            },
+            [_vm._v("\n                Edit\n            ")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal", attrs: { id: "myModal" } }, [
+            _c("div", { staticClass: "modal-dialog" }, [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label text-md-right",
+                        attrs: { for: "name" }
+                      },
+                      [_vm._v("Name")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.usuario.name,
+                            expression: "usuario.name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", name: "name" },
+                        domProps: { value: _vm.usuario.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.usuario, "name", $event.target.value)
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label text-md-right",
+                        attrs: { for: "description" }
+                      },
+                      [_vm._v("Description")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.usuario.description,
+                            expression: "usuario.description"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          maxlength: "200",
+                          type: "text",
+                          name: "description"
+                        },
+                        domProps: { value: _vm.usuario.description },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.usuario,
+                              "description",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button", "data-dismiss": "modal" }
+                    },
+                    [_vm._v("Close")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button", "data-dismiss": "modal" },
+                      on: {
+                        click: function($event) {
+                          return _vm.updateUser()
+                        }
+                      }
+                    },
+                    [_vm._v("Save changes")]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
       ]
     )
   ])
@@ -37724,10 +37855,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-4" }, [
-      _c("button", { staticClass: "btn btn-danger" }, [_vm._v("Delete")]),
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [_vm._v("Edit User")]),
       _vm._v(" "),
-      _c("button", { staticClass: "btn btn-success" }, [_vm._v("Update")])
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      )
     ])
   }
 ]
