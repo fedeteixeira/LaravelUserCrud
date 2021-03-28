@@ -1965,6 +1965,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['user_no_json'],
   data: function data() {
@@ -37708,16 +37710,17 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "mt-4" }, [
           _c(
-            "button",
+            "a",
             {
               staticClass: "btn btn-danger",
+              attrs: { href: "/home" },
               on: {
                 click: function($event) {
                   return _vm.deleteUser()
                 }
               }
             },
-            [_vm._v("Delete")]
+            [_vm._v("\n                Delete\n            ")]
           ),
           _vm._v(" "),
           _c(

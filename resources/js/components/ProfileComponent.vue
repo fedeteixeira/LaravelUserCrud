@@ -6,7 +6,9 @@
             <h5 class="w-75 text-muted">{{usuario.description}}</h5>
 
             <div class="mt-4">
-                <button v-on:click="deleteUser()" class="btn btn-danger">Delete</button>
+                <a v-on:click="deleteUser()" class="btn btn-danger" href="/home">
+                    Delete
+                </a>
                 <!-- Button to Open the Modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     Edit
