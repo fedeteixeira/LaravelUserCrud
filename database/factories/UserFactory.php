@@ -22,7 +22,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $length = random_int ( 100 , 200 );
+        $length = random_int ( 50, 200 );
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,

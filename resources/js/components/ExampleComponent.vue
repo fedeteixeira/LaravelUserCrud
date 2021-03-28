@@ -4,7 +4,7 @@
             <div class="card-columns">
                 <div class="card"  v-for="usuario in usuarios.data" :key="usuario.id">
                     <div class="card-body text-center">
-                        <img src="/images/default.png" alt="" class="profile-pic">
+                        <img :src="'images/profile_photos/'+ usuario.image" alt="" class="ratio img-responsive img-circle rounded-circle">
                         <div class="dropdown">
                             <h3 class="card-title profile-name mt-3">
                                 {{usuario.name}}

@@ -76,12 +76,12 @@ class RegisterController extends Controller
             })->save( public_path('/images/profile_photos/' . $imageName) );
         }
 
-        return User::create([
+        return $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
             'description' => $data['description'],
             'image' => $imageName,
+            'password' => Hash::make($data['password']),
         ]);
     }
 }

@@ -37464,8 +37464,11 @@ var render = function() {
           return _c("div", { key: usuario.id, staticClass: "card" }, [
             _c("div", { staticClass: "card-body text-center" }, [
               _c("img", {
-                staticClass: "profile-pic",
-                attrs: { src: "/images/default.png", alt: "" }
+                staticClass: "ratio img-responsive img-circle rounded-circle",
+                attrs: {
+                  src: "images/profile_photos/" + usuario.image,
+                  alt: ""
+                }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "dropdown" }, [

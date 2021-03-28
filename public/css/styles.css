@@ -21,9 +21,10 @@
     font-weight: bolder;
 }
 
-.profile-pic {
+.rounded-circle {
     border-radius: 50%;
-    max-width: 70%;
+    width: 200px;
+    height: 200px;
 }
 
 #dropdownProfileButton:hover {
