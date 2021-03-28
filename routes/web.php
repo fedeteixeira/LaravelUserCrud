@@ -1,5 +1,6 @@
 <?php
 
+use Facade\FlareClient\Api;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Apis usuario
+Route::apiResource('/user' , App\Http\Controllers\UserController::class);

@@ -1873,9 +1873,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      usuarios: []
+    };
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.retrieveUsers();
+  },
+  methods: {
+    retrieveUsers: function retrieveUsers() {
+      var _this = this;
+
+      axios.get('/user').then(function (response) {
+        _this.usuarios = response.data;
+      });
+    },
+    deleteUser: function deleteUser(user_id) {
+      axios["delete"]('/user/' + user_id).then(this.retrieveUsers());
+    },
+    loggear: function loggear(data) {
+      console.log(data);
+    }
   }
 });
 
@@ -37433,17 +37455,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mt-5" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "card-columns" }, [
-          _c("div", { staticClass: "card max" }, [
+  return _c("div", { staticClass: "container mt-5" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c(
+        "div",
+        { staticClass: "card-columns" },
+        _vm._l(_vm.usuarios.data, function(usuario) {
+          return _c("div", { key: usuario.id, staticClass: "card" }, [
             _c("div", { staticClass: "card-body text-center" }, [
               _c("img", {
                 staticClass: "profile-pic",
@@ -37453,7 +37471,9 @@ var staticRenderFns = [
               _c("div", { staticClass: "dropdown" }, [
                 _c("h3", { staticClass: "card-title profile-name mt-3" }, [
                   _vm._v(
-                    "\n                            Federico Teixeira\n                            "
+                    "\n                            " +
+                      _vm._s(usuario.name) +
+                      "\n                            "
                   ),
                   _c("img", {
                     attrs: {
@@ -37474,8 +37494,16 @@ var staticRenderFns = [
                     [
                       _c(
                         "a",
-                        { staticClass: "dropdown-item", attrs: { href: "#" } },
-                        [_vm._v("Action")]
+                        {
+                          staticClass: "dropdown-item",
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteUser(usuario.id)
+                            }
+                          }
+                        },
+                        [_vm._v("Delete")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -37496,16 +37524,20 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("div", { staticClass: "description" }, [
                 _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ipsam asperiores iste officia quam accusantium consequatur quae nemo aliquam praesentium.\n                    "
+                  "\n                        " +
+                    _vm._s(usuario.description) +
+                    "                        \n                    "
                 )
               ])
             ])
           ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
