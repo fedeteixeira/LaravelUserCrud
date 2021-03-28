@@ -1,13 +1,14 @@
 <template>
-    <div>
-        <div class="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
+    <div class="d-flex flex-column align-content-center justify-content-center" >
+        <img class="profileBackPic" src='https://www.theagilityeffect.com/app/uploads/2019/09/00_VINCI-ICONOGRAPHIE_GettyImages-1065377816-1280x680.jpg'>
+        <div class="flotando mt-5 d-flex flex-column justify-content-center align-items-center text-center">
             <img :src="'/images/profile_photos/'+ usuario.image" alt="" class="ratio img-responsive img-circle rounded-circle">
             <h1 class="text-success font-weight-bold ml-3 mt-5">{{usuario.name}}</h1>
             <h5 class="w-75 text-muted">{{usuario.description}}</h5>
 
             <div class="mt-4">
                 <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm">
+                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirm">
                     Delete
                 </button>
 
@@ -41,7 +42,7 @@
                 </div>
 
                 <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-outline-primary ml-2" data-toggle="modal" data-target="#myModal">
                     Edit
                 </button>
 
@@ -83,7 +84,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </template>
 

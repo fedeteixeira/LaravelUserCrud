@@ -37718,237 +37718,257 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass:
-          "mt-5 d-flex flex-column justify-content-center align-items-center text-center"
-      },
-      [
-        _c("img", {
-          staticClass: "ratio img-responsive img-circle rounded-circle",
-          attrs: { src: "/images/profile_photos/" + _vm.usuario.image, alt: "" }
-        }),
-        _vm._v(" "),
-        _c("h1", { staticClass: "text-success font-weight-bold ml-3 mt-5" }, [
-          _vm._v(_vm._s(_vm.usuario.name))
-        ]),
-        _vm._v(" "),
-        _c("h5", { staticClass: "w-75 text-muted" }, [
-          _vm._v(_vm._s(_vm.usuario.description))
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-4" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              attrs: {
-                type: "button",
-                "data-toggle": "modal",
-                "data-target": "#deleteConfirm"
-              }
-            },
-            [_vm._v("\n                Delete\n            ")]
-          ),
+  return _c(
+    "div",
+    {
+      staticClass:
+        "d-flex flex-column align-content-center justify-content-center"
+    },
+    [
+      _c("img", {
+        staticClass: "profileBackPic",
+        attrs: {
+          src:
+            "https://www.theagilityeffect.com/app/uploads/2019/09/00_VINCI-ICONOGRAPHIE_GettyImages-1065377816-1280x680.jpg"
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "flotando mt-5 d-flex flex-column justify-content-center align-items-center text-center"
+        },
+        [
+          _c("img", {
+            staticClass: "ratio img-responsive img-circle rounded-circle",
+            attrs: {
+              src: "/images/profile_photos/" + _vm.usuario.image,
+              alt: ""
+            }
+          }),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "modal fade", attrs: { id: "deleteConfirm" } },
-            [
-              _c(
-                "div",
-                { staticClass: "modal-dialog modal-dialog-centered modal-sm" },
-                [
-                  _c("div", { staticClass: "modal-content" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "modal-body" }, [
-                      _vm._v(
-                        "\n                            Are you sure you want to delete "
-                      ),
-                      _c(
-                        "span",
-                        { staticClass: "text-primary font-weight-bold" },
-                        [_vm._v(_vm._s(_vm.usuario.name))]
-                      ),
-                      _vm._v(" ?\n                            "),
-                      _c("div", { staticClass: "text-danger" }, [
+          _c("h1", { staticClass: "text-success font-weight-bold ml-3 mt-5" }, [
+            _vm._v(_vm._s(_vm.usuario.name))
+          ]),
+          _vm._v(" "),
+          _c("h5", { staticClass: "w-75 text-muted" }, [
+            _vm._v(_vm._s(_vm.usuario.description))
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-4" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger",
+                attrs: {
+                  type: "button",
+                  "data-toggle": "modal",
+                  "data-target": "#deleteConfirm"
+                }
+              },
+              [_vm._v("\n                Delete\n            ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "modal fade", attrs: { id: "deleteConfirm" } },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "modal-dialog modal-dialog-centered modal-sm"
+                  },
+                  [
+                    _c("div", { staticClass: "modal-content" }, [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-body" }, [
                         _vm._v(
-                          "\n                                This action is not reversible\n                            "
+                          "\n                            Are you sure you want to delete "
+                        ),
+                        _c(
+                          "span",
+                          { staticClass: "text-primary font-weight-bold" },
+                          [_vm._v(_vm._s(_vm.usuario.name))]
+                        ),
+                        _vm._v(" ?\n                            "),
+                        _c("div", { staticClass: "text-danger" }, [
+                          _vm._v(
+                            "\n                                This action is not reversible\n                            "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-footer" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-secondary",
+                            attrs: { type: "button", "data-dismiss": "modal" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                No, go back\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-danger",
+                            attrs: { href: "/home" },
+                            on: {
+                              click: function($event) {
+                                return _vm.deleteUser()
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                Yes, delete\n                            "
+                            )
+                          ]
                         )
+                      ])
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-primary ml-2",
+                attrs: {
+                  type: "button",
+                  "data-toggle": "modal",
+                  "data-target": "#myModal"
+                }
+              },
+              [_vm._v("\n                Edit\n            ")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
+              _c("div", { staticClass: "modal-dialog modal-dialog-centered" }, [
+                _c("div", { staticClass: "modal-content" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-body" }, [
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-4 col-form-label text-md-right",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Name")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.usuario.name,
+                              expression: "usuario.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", name: "name" },
+                          domProps: { value: _vm.usuario.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.usuario, "name", $event.target.value)
+                            }
+                          }
+                        })
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "modal-footer" }, [
+                    _c("div", { staticClass: "form-group row" }, [
                       _c(
-                        "button",
+                        "label",
                         {
-                          staticClass: "btn btn-secondary",
-                          attrs: { type: "button", "data-dismiss": "modal" }
+                          staticClass: "col-md-4 col-form-label text-md-right",
+                          attrs: { for: "description" }
                         },
-                        [
-                          _vm._v(
-                            "\n                                No, go back\n                            "
-                          )
-                        ]
+                        [_vm._v("Description")]
                       ),
                       _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-danger",
-                          attrs: { href: "/home" },
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.usuario.description,
+                              expression: "usuario.description"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            maxlength: "200",
+                            rows: "5",
+                            type: "text",
+                            name: "description"
+                          },
+                          domProps: { value: _vm.usuario.description },
                           on: {
-                            click: function($event) {
-                              return _vm.deleteUser()
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.usuario,
+                                "description",
+                                $event.target.value
+                              )
                             }
                           }
-                        },
-                        [
-                          _vm._v(
-                            "\n                                Yes, delete\n                            "
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary ml-2",
-              attrs: {
-                type: "button",
-                "data-toggle": "modal",
-                "data-target": "#myModal"
-              }
-            },
-            [_vm._v("\n                Edit\n            ")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
-            _c("div", { staticClass: "modal-dialog modal-dialog-centered" }, [
-              _c("div", { staticClass: "modal-content" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "modal-body" }, [
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-md-4 col-form-label text-md-right",
-                        attrs: { for: "name" }
-                      },
-                      [_vm._v("Name")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.usuario.name,
-                            expression: "usuario.name"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", name: "name" },
-                        domProps: { value: _vm.usuario.name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.usuario, "name", $event.target.value)
-                          }
-                        }
-                      })
+                        })
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group row" }, [
+                  _c("div", { staticClass: "modal-footer" }, [
                     _c(
-                      "label",
+                      "button",
                       {
-                        staticClass: "col-md-4 col-form-label text-md-right",
-                        attrs: { for: "description" }
+                        staticClass: "btn btn-secondary",
+                        attrs: { type: "button", "data-dismiss": "modal" }
                       },
-                      [_vm._v("Description")]
+                      [_vm._v("Close")]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _c("textarea", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.usuario.description,
-                            expression: "usuario.description"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          maxlength: "200",
-                          rows: "5",
-                          type: "text",
-                          name: "description"
-                        },
-                        domProps: { value: _vm.usuario.description },
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button", "data-dismiss": "modal" },
                         on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.usuario,
-                              "description",
-                              $event.target.value
-                            )
+                          click: function($event) {
+                            return _vm.updateUser()
                           }
                         }
-                      })
-                    ])
+                      },
+                      [_vm._v("Save changes")]
+                    )
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "modal-footer" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-secondary",
-                      attrs: { type: "button", "data-dismiss": "modal" }
-                    },
-                    [_vm._v("Close")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "button", "data-dismiss": "modal" },
-                      on: {
-                        click: function($event) {
-                          return _vm.updateUser()
-                        }
-                      }
-                    },
-                    [_vm._v("Save changes")]
-                  )
                 ])
               ])
             ])
           ])
-        ])
-      ]
-    )
-  ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
