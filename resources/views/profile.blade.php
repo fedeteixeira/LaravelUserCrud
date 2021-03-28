@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <profile-component></profile-component>
+    
+    <div class="container">
+        <profile-component user_no_json="{{$user}}"></profile-component>
+    </div>
+
 @endsection

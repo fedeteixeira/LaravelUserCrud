@@ -37,7 +37,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return $user = User::find($id);
+        $user = User::find($id);
+        return view('profile', ['user' => $user]);
     }
 
     /**
