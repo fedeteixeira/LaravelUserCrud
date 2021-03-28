@@ -4,8 +4,8 @@
 <div class="container d-flex flex-column min-vw-100 min-vh-100 justify-content-center homeBackPic">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card opacity">
-                <div class="card-header text-light">
+            <div class="card opacity border-0">
+                <div class="card-header text-light border-0">
                     <h1>{{ __('Login') }}</h1>
                 </div>
 
@@ -53,12 +53,16 @@
                             </div>
                         </div>
 
-                        <d-flex class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="form-group row mb-0">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+                        <div class="form-group d-flex flex-column align-items-center justify-content-center mb-0">
+                            <button type="submit" class="btn btn-primary w-50">
+                                {{ __('Login') }}
+                            </button>
+                        </div>
 
+                        <d-flex class="d-flex flex-column align-items-center justify-content-center">
+                            
+
+                            <div class="form-group row mb-0">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link text-light" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}

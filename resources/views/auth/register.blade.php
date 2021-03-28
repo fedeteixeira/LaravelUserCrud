@@ -4,12 +4,12 @@
 <div class="container d-flex flex-column min-vw-100 min-vh-100 justify-content-center homeBackPic">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card opacity">
-                <div class="card-header text-light">
+            <div class="card opacity border-0">
+                <div class="card-header text-light border-0">
                     <h1>{{ __('Register') }}</h1>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body border-0">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -65,7 +65,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary w-100">
                                     {{ __('Register') }}
                                 </button>
                             </div>

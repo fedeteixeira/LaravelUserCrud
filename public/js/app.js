@@ -1861,6 +1861,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37428,18 +37440,65 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+    return _c("div", { staticClass: "container mt-5" }, [
       _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+        _c("div", { staticClass: "card-columns" }, [
+          _c("div", { staticClass: "card max" }, [
+            _c("div", { staticClass: "card-body text-center" }, [
+              _c("img", {
+                staticClass: "profile-pic",
+                attrs: { src: "/images/default.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "dropdown" }, [
+                _c("h3", { staticClass: "card-title profile-name mt-3" }, [
+                  _vm._v(
+                    "\n                            Federico Teixeira\n                            "
+                  ),
+                  _c("img", {
+                    attrs: {
+                      src: "/images/three-dots-vertical.svg",
+                      id: "dropdownProfileButton",
+                      "data-toggle": "dropdown",
+                      "aria-haspopup": "true",
+                      "aria-expanded": "false"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dropdown-menu",
+                      attrs: { "aria-labelledby": "dropdownMenuButton" }
+                    },
+                    [
+                      _c(
+                        "a",
+                        { staticClass: "dropdown-item", attrs: { href: "#" } },
+                        [_vm._v("Action")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        { staticClass: "dropdown-item", attrs: { href: "#" } },
+                        [_vm._v("Another action")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        { staticClass: "dropdown-item", attrs: { href: "#" } },
+                        [_vm._v("Something else here")]
+                      )
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "description" }, [
+                _vm._v(
+                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ipsam asperiores iste officia quam accusantium consequatur quae nemo aliquam praesentium.\n                    "
+                )
+              ])
             ])
           ])
         ])
