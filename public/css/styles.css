@@ -17,6 +17,12 @@
     overflow: hidden;
 }
 
+.datos-user {
+    position: absolute;
+    top: 30%;
+    width: 50%;
+}
+
 .overlay {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
