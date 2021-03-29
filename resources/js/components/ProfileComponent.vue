@@ -2,14 +2,22 @@
     <div class="d-flex flex-column align-content-center justify-content-center" >
         <img class="profileBackPic" src='https://www.theagilityeffect.com/app/uploads/2019/09/00_VINCI-ICONOGRAPHIE_GettyImages-1065377816-1280x680.jpg'>
         <div class="d-flex flex-column justify-content-center align-items-center text-center">
-            <img :src="'/images/profile_photos/'+ usuario.image" alt="" class="ratio img-responsive img-circle rounded-circle">
+            <img :src="'/images/profile_photos/'+ usuario.image" alt="" class="mt-3 ratio img-responsive img-circle rounded-circle">
             <div class="datos-user">
                 <h1 class="text-success font-weight-bold mt-5">{{usuario.name}}</h1>
+                <span class="fas fa-facebook-f text-dark"></span>
                 <h5 class="text-muted">{{usuario.description}}</h5>
 
             <div class="mt-4">
+                <a href="/home" type="button" class="btn btn-outline-success mr-2">
+                    <span class="fas fa-home"></span>
+                    Home
+                </a>
+
+
                 <!-- Button to Open the Modal -->
                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirm">
+                    <span class="fas fa-trash"></span>
                     Delete
                 </button>
 
@@ -35,6 +43,7 @@
                                 </button>
 
                                 <a v-on:click="deleteUser()" class="btn btn-danger" href="/home">
+                                    <span class="fas fa-trash"></span>
                                     Yes, delete
                                 </a>
                             </div>
@@ -44,6 +53,7 @@
 
                 <!-- Button to Open the Modal -->
                 <button type="button" class="btn btn-outline-primary ml-2" data-toggle="modal" data-target="#myModal">
+                    <span class="fas fa-edit"></span>
                     Edit
                 </button>
 
@@ -77,7 +87,10 @@
                             <!-- Modal footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button v-on:click="updateUser()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                <button v-on:click="updateUser()" type="button" class="btn btn-primary" data-dismiss="modal">
+                                    <span class="fas fa-save"></span>
+                                    Save changes
+                                </button>
                             </div>
 
                         </div>

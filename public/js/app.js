@@ -1868,8 +1868,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1909,6 +1907,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37743,7 +37754,7 @@ var render = function() {
         },
         [
           _c("img", {
-            staticClass: "ratio img-responsive img-circle rounded-circle",
+            staticClass: "mt-3 ratio img-responsive img-circle rounded-circle",
             attrs: {
               src: "/images/profile_photos/" + _vm.usuario.image,
               alt: ""
@@ -37755,23 +37766,16 @@ var render = function() {
               _vm._v(_vm._s(_vm.usuario.name))
             ]),
             _vm._v(" "),
+            _c("span", { staticClass: "fas fa-facebook-f text-dark" }),
+            _vm._v(" "),
             _c("h5", { staticClass: "text-muted" }, [
               _vm._v(_vm._s(_vm.usuario.description))
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mt-4" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-danger",
-                  attrs: {
-                    type: "button",
-                    "data-toggle": "modal",
-                    "data-target": "#deleteConfirm"
-                  }
-                },
-                [_vm._v("\n                Delete\n            ")]
-              ),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "div",
@@ -37784,7 +37788,7 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "modal-content" }, [
-                        _vm._m(0),
+                        _vm._m(2),
                         _vm._v(" "),
                         _c("div", { staticClass: "modal-body" }, [
                           _vm._v(
@@ -37829,6 +37833,7 @@ var render = function() {
                               }
                             },
                             [
+                              _c("span", { staticClass: "fas fa-trash" }),
                               _vm._v(
                                 "\n                                Yes, delete\n                            "
                               )
@@ -37841,18 +37846,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-primary ml-2",
-                  attrs: {
-                    type: "button",
-                    "data-toggle": "modal",
-                    "data-target": "#myModal"
-                  }
-                },
-                [_vm._v("\n                Edit\n            ")]
-              ),
+              _vm._m(3),
               _vm._v(" "),
               _c(
                 "div",
@@ -37863,7 +37857,7 @@ var render = function() {
                     { staticClass: "modal-dialog modal-dialog-centered" },
                     [
                       _c("div", { staticClass: "modal-content" }, [
-                        _vm._m(1),
+                        _vm._m(4),
                         _vm._v(" "),
                         _c("div", { staticClass: "modal-body" }, [
                           _c("div", { staticClass: "form-group row" }, [
@@ -37976,7 +37970,12 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("Save changes")]
+                            [
+                              _c("span", { staticClass: "fas fa-save" }),
+                              _vm._v(
+                                "\n                                Save changes\n                            "
+                              )
+                            ]
                           )
                         ])
                       ])
@@ -37996,9 +37995,65 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-outline-success mr-2",
+        attrs: { href: "/home", type: "button" }
+      },
+      [
+        _c("span", { staticClass: "fas fa-home" }),
+        _vm._v("\n                Home\n            ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-outline-danger",
+        attrs: {
+          type: "button",
+          "data-toggle": "modal",
+          "data-target": "#deleteConfirm"
+        }
+      },
+      [
+        _c("span", { staticClass: "fas fa-trash" }),
+        _vm._v("\n                Delete\n            ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header bg-danger text-light" }, [
       _c("h4", { staticClass: "modal-title" }, [_vm._v("Delete Confirmation")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-outline-primary ml-2",
+        attrs: {
+          type: "button",
+          "data-toggle": "modal",
+          "data-target": "#myModal"
+        }
+      },
+      [
+        _c("span", { staticClass: "fas fa-edit" }),
+        _vm._v("\n                Edit\n            ")
+      ]
+    )
   },
   function() {
     var _vm = this
